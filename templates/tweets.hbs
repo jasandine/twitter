@@ -1,0 +1,16 @@
+<div class="col-md-10">
+  <h1>Tweet Feed</h1>
+  {{#each tweet in model}}
+    <h3>{{tweet.text}}</h3>
+
+  {{/each}}
+
+  <h2>New Tweet</h2>
+  <form>
+    <div class="form-group">
+      <label for="tweet">Tweet</label>
+      {{input id="tweet" class="form-control" value=newTweet}}
+    </div>
+    <button class="btn btn-primary" {{action 'createTweet'}}>Save</button>
+  </form>
+</div>
