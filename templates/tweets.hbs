@@ -1,9 +1,11 @@
 <div class="col-md-10">
   <h1>Tweet Feed</h1>
-  {{#each}}
-    <h3>{{#link-to 'date'}}{{text}}{{/link-to}}</h3>
-        <div class="col-md-4">{{outlet}}</div>
-
+  {{#each controller}}
+    <h3 {{action 'expandTweet'}}>{{text}}</h3>
+    {{#if isExpanded}}
+      {{date}}
+    {{else}}
+    {{/if}}
   {{/each}}
 
   <h2>New Tweet</h2>
