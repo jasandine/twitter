@@ -2,9 +2,23 @@
   <h1>Tweet Feed</h1>
   {{#each controller}}
     <h3 {{action 'expandTweet'}}>{{text}}</h3>
+
     {{#if isExpanded}}
       {{date}}
-    {{else}}
+
+      {{#each item}}
+        <p>{{tweetReply}}</p>
+      {{/each}}
+
+      <form>
+        <div class="form-group">
+          <label for="reply">Reply to Tweet</label>
+          {{input id="reply" class="form-control" maxlength="141" value=tweetReply}}
+        </div>
+          <button class="btn btn-primary">Reply</button>
+
+      </form>
+
     {{/if}}
   {{/each}}
 

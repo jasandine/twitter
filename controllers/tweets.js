@@ -10,7 +10,7 @@ Twitter.TweetsController = Ember.ArrayController.extend({
       tweets.addObject({
         text: this.newTweet,
         id: id,
-        date: new Date
+        date: new Date,
       });
 
       this.set('newTweet', '');
